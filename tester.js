@@ -10,14 +10,14 @@ jQuery(document).ready( function (){
     // if names match, sets quantity to new quantity
     $('table.waffle tbody tr').each(function() {
         console.log('first line');
-        if($(this).children('td.s3').length > 0){
+        if($(this).children().length > 0){
             console.log('in this');
-            let searchName = $(this).children('td.s0').text();
+            let searchName = $(':nth-child(2)', this).text();
             let listIndex = myListy.indexOf(searchName);
             // must add one for nth child call
             //if value is in list, set quantity via attr change
             if(listIndex !== -1){
-                $(`table.ellipsis-wrap tbody tr:nth-child(${listIndex + 1}) td input.onhand`).attr('value', $(this).children('td.s2').text());
+                $(`table.ellipsis-wrap tbody tr:nth-child(${listIndex + 1}) td input.onhand`).attr('value', $(':nth-child(3)', this).text());
             };
         };
     });
