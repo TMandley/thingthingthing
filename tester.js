@@ -8,7 +8,7 @@ jQuery(document).ready( function (){
 
     // checks list of products from added html against original product list. 
     // if names match, sets quantity to new quantity
-    $('html body object html body table.waffle tbody tr').each(function() {
+    $('table.waffle tbody tr').each(function() {
         console.log('first line');
         if($(this).children('td.s3').length > 0){
             console.log('in this');
